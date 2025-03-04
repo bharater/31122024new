@@ -28,9 +28,11 @@ class SliderController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;
-            $file->move('uploads/slider/', $filename);
-            $validatedData['image'] = "uploads/slider/$filename";
+            $filename = time() . '.' . $ext;
+
+            // Store images in the public/uploads/slider directory
+            $file->move(public_path('uploads/slider/'), $filename);
+            $validatedData['image'] = 'uploads/slider/' . $filename;
         }
 
         $validatedData['status'] = $request->status == true ? '1' : '0';
@@ -55,13 +57,15 @@ class SliderController extends Controller
         $validatedData = $request->validated();
 
         if ($request->hasFile('image')) {
-            $destination = $slider->image;
+            $destination = public_path($slider->image);
             if (File::exists($destination)) {
                 File::delete($destination);
             }
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
-            $filename = time().'.'.$ext;
+            $filename = time() . '.' . $ext;
+
+            // Use the correct path for slider images
             $file->move('uploads/slider/', $filename);
             $validatedData['image'] = "uploads/slider/$filename";
         }

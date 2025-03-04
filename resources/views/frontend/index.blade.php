@@ -4,58 +4,41 @@
 
 @section('content')
 
-<!-- Carousel Section -->
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        @foreach ($sliders as $key => $sliderItem)
-            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                @if ($sliderItem->image)
-                    <img src="{{ asset($sliderItem->image) }}" class="d-block w-100" alt="...">
-                @endif
-                <div class="carousel-caption d-none d-md-block">
-                    <div class="custom-carousel-content">
-                        <h1>{!! $sliderItem->title !!}</h1>
-                        <p>{!! $sliderItem->description !!}</p>
-                        <div>
-                            <a href="#" class="btn btn-slider text-white">Get Now</a>
+<!--slider section start-->
+<div class="hero-section section position-relative">
+    <!-- Debug line to check image path - remove after fixing -->
+    @if(env('APP_DEBUG'))
+        <!-- Current Image Paths: -->
+        @foreach($sliders as $slider)
+            <!-- {{ $slider->image }} -->
+        @endforeach
+    @endif
+
+    <div class="tf-element-carousel slider-nav">
+        @foreach($sliders as $key => $sliderItem)
+            <!--Hero Item start-->
+            <div class="hero-item">
+                <!-- Change from background-image to direct img tag for testing -->
+                <img src="{{ asset($sliderItem->image) }}" alt="Slider Image" style="width: 100%; height: 600px; object-fit: cover; position: absolute;">
+                <div class="container position-relative" style="z-index: 2;">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="hero-content-2 {{ $key == 0 ? 'color-1 center' : 'color-2' }}">
+                                <h2>view our</h2>
+                                <h1>{!! $sliderItem->title !!}</h1>
+                                <h3>{!! $sliderItem->description !!}</h3>
+                                <a href="#" class="btn-slider">shop now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!--Hero Item end-->
         @endforeach
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div>
+<!--slider section end-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Welcome Section -->
 <div class="py-4 bg-white">
     <div class="container">
         <div class="row justify-content-center">
@@ -243,40 +226,97 @@
 
 @endsection
 
-@section('script')
-<script>
-    // Initialize owl carousel
-    $('.four-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        dots: true,
-        nav: false,
-        autoplay: false, // Automatic sliding
-        autoplayTimeout: 5000, // Time between slides (5 seconds)
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 4
-            }
-        }
-    });
-</script>
-@endsection
-
+@section('style')
 <style>
+.hero-item {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.hero-content-2 {
+    position: relative;
+    z-index: 2;
+}
+
+/* Add overlay */
+.hero-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+    .hero-section {
+        margin-bottom: 30px;
+    }
+    .hero-item {
+        min-height: 600px;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .hero-content-2 {
+        padding: 100px 0;
+        position: relative;
+        z-index: 2;
+    }
+    .hero-content-2.center {
+        text-align: center;
+    }
+    .hero-content-2 h2 {
+        font-size: 30px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    .hero-content-2 h1 {
+        font-size: 60px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    .hero-content-2 h3 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    .hero-content-2 .btn-slider {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #fff;
+        color: #222;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-radius: 50px;
+        transition: all 0.3s;
+    }
+    .hero-content-2 .btn-slider:hover {
+        background: #222;
+        color: #fff;
+    }
+    .color-1 {
+        color: #222;
+    }
+    .color-2 {
+        color: #fff;
+    }
+    .hero-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
     /* Hover effects for buttons */
     .btn1:hover {
         background-color: #ffcc00;
-        color: #fff;
-    }
-
-    .btn-slider:hover {
-        background-color: #007bff;
         color: #fff;
     }
 
@@ -291,3 +331,53 @@
         justify-content: space-between;
     }
 </style>
+@endsection
+
+@section('script')
+<script>
+$(document).ready(function(){
+    $('.tf-element-carousel').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        prevArrow: '<button class="slick-prev"><i class="fa fa-angle-left"></i></button>',
+        nextArrow: '<button class="slick-next"><i class="fa fa-angle-right"></i></button>',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                },
+            }
+        ]
+    });
+
+    // Initialize owl carousel
+    $('.four-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        dots: true,
+        nav: false,
+        autoplay: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
+});
+</script>
+@endsection

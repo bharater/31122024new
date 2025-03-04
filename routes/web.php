@@ -50,6 +50,16 @@ Route::middleware(['auth'])->group(function(){
 Route::get('thank-you', [FrontendController::class, 'thankyou']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Add this temporary debug route
+Route::get('/debug-sliders', function() {
+    $sliders = \App\Models\Slider::all();
+    foreach($sliders as $slider) {
+        echo "Image path: " . $slider->image . "<br>";
+        echo "Full URL: " . asset($slider->image) . "<br>";
+        echo "File exists: " . (file_exists(public_path($slider->image)) ? 'Yes' : 'No') . "<br><hr>";
+    }
+});
+
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index']);
     Route::get('settings', [SettingController::class, 'index']);
@@ -98,10 +108,10 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     //     Route::get('/colors/{color_id}/delete', 'destroy');
     // });
 
-    
 
 
-    
+
+
     Route::controller(ProductVariationController::class)->group(function () {
         Route::get('/variations', 'index')->name('variations.index');
         Route::get('/variations/create', 'create')->name('variations.create');
