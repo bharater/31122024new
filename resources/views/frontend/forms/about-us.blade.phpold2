@@ -1,0 +1,81 @@
+@extends('layouts.app')
+
+@section('title', 'about Us')
+
+@section('content')
+
+<div class="container my-5">
+    <h1 class="text-center mb-1">About Us</h1>
+    <hr>
+
+    <!-- First Section -->
+    <div class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <img src="{{ asset($appSetting->mission_image) }}" class="img-fluid rounded shadow" alt="Mission Image" style="height: 200px; width: 300px;">
+            </div>
+            <div class="col-md-8">
+                <h2 class="text-primary">{{ $appSetting->mission_title }}</h2>
+                <p class="lead">
+                    <i class="fa " aria-hidden="true"></i>
+                    {{ $appSetting->mission_description }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Section -->
+    <div class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h2 class="text-primary">{{ $appSetting->vision_title }}</h2>
+                <p class="lead">
+                    <i class="fa " aria-hidden="true"></i>
+                    {{ $appSetting->vision_description }}
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ asset($appSetting->vision_image) }}" class="img-fluid rounded shadow" alt="Vision Image" style="height: 200px; width: 300px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Section -->
+    <div class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <img src="{{ asset($appSetting->values_image) }}" class="img-fluid rounded shadow" alt="Values Image" style="height: 200px; width: 300px;">
+            </div>
+            <div class="col-md-8">
+                <h2 class="text-primary">{{ $appSetting->values_title }}</h2>
+                <p class="lead">
+                    <i class="fa " aria-hidden="true"></i>
+                    {{ $appSetting->values_description }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Image Row Section (last three images side by side) -->
+    <div class="row">
+        @for($i = 6; $i <= 8; $i++)
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="{{ asset($appSetting->{'project_'.$i.'_image'}) }}" alt="Project {{ $i }} Image" style="height: 200px; width: 300px;"></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">{{ $appSetting->{'project_'.$i.'_title'} }}</a>
+                    </h4>
+                    <p class="card-text">{{ $appSetting->{'project_'.$i.'_description'} }}</p>
+                </div>
+            </div>
+        </div>
+        @endfor
+    </div>
+
+    <hr>
+</div>
+
+@endsection
