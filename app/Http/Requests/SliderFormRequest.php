@@ -29,7 +29,7 @@ class SliderFormRequest extends FormRequest
                 'string',
                 'max:255',
             ],
-            
+
             'description'=>[
                 'required',
                 'string',
@@ -39,7 +39,7 @@ class SliderFormRequest extends FormRequest
             'image'=>[
                 'nullable',
                 'image',
-                'mimes:jpg,jpeg,png',
+                'mimes:jpg,jpeg,png,webp',
             ],
 
             'status'=>[

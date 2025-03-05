@@ -39,190 +39,342 @@
 </div>
 <!--slider section end-->
 
-<div class="py-4 bg-white">
+        <!--Banner section start-->
+        <div class="banner-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <!-- Single Banner Start -->
+        @foreach($sliders as $key => $sliderItem)
+
+                        <div class="single-banner mb-30">
+                            <a href="#">
+                                <img src="{{ asset($sliderItem->image) }}" alt="">
+                            </a>
+                        </div>
+                        <!-- Single Banner End -->
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <!-- Single Banner Start -->
+                        <div class="single-banner mb-30">
+                            <a href="#">
+                                {{-- <img src="images/h1-banner-2.png" alt=""> --}}
+                                <img src="{{ asset($sliderItem->image) }}" alt="">
+
+                            </a>
+                        </div>
+                        <!-- Single Banner End -->
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <!-- Single Banner Start -->
+                        <div class="single-banner mb-30">
+                            <a href="#">
+                                <img src="{{ asset($sliderItem->image) }}" alt="">
+
+                                {{-- <img src="images/h1-banner-3.png" alt=""> --}}
+                            </a>
+                        </div>
+                        <!-- Single Banner End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+        <!--Banner section end-->
+
+
+                <!--Deal Of Product section start-->
+                <div class="deal-product-section section pt-70 pt-lg-50 pt-md-40 pt-sm-30 pt-xs-20">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Section Title Start -->
+                            <div class="col">
+                                <div class="section-title mb-40 mb-xs-20">
+                                    <h2>Deals of the day</h2>
+                                </div>
+                            </div>
+                            <!-- Section Title End -->
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tf-element-carousel" data-slick-options="{
+                                " slidestoshow":="" 1,="" "slidestoscroll":="" "infinite":="" true,="" "arrows":="" "prevarrow":="" {"buttonclass":="" "slick-btn="" slick-prev",="" "iconclass":="" "fa="" fa-angle-left"="" },="" "nextarrow":="" slick-next",="" fa-angle-right"="" }="" }"="" data-slick-responsive="[
+                                {" breakpoint":768,="" "settings":="" {="" "slidestoshow":="" false,="" "autoplay":="" true="" }},="" {"breakpoint":575,="" }}="" ]"="">
+                                    <!-- Single Deal Product Start -->
+                                    <div class="single-deal-product">
+                                        <div class="row">
+                                            @foreach($sliders as $key => $sliderItem)
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="deal-product-img">
+                                                    <a href="#">
+                                                        <img src="{{ asset($sliderItem->image) }}" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="deal-product-content">
+                                                    <h3><a href="single-product.html">Aftershave Lotion</a></h3>
+                                                    <div class="ratting">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    <h4 class="price"><span class="new">€110.00</span><span class="old">€130.00</span></h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                                        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                                        volutpat. Ut wisi..</p>
+                                                    <div class="cs-countdown black-color">
+                                                        <div class="pro-countdown" data-countdown="2021/01/10"></div>
+                                                    </div>
+                                                    <div class="actoion-box">
+                                                        <div class="product-action d-flex justify-content-between">
+                                                            <a class="product-btn" href="#">Add to Cart</a>
+                                                            <ul class="d-flex">
+                                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    @endforeach
+                                    <!-- Single Deal Product End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Deal Of Product section end-->
+
+
+
+
+<!--Product section start-->
+<div class="product-section section pt-100 pt-lg-70 pt-md-65 pt-sm-60 pt-xs-45 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center">
-                <h4>Welcome to Fuerte Ecom</h4>
-                <div class="underline mx-auto"></div>
-                <p>Discover amazing products, shop from a wide range of collections, and experience seamless online shopping.</p>
+        <div class="row">
+            <div class="col">
+                <div class="product-tab-menu mb-40 mb-xs-20">
+                    <ul class="nav">
+                        <li><a class="active" data-bs-toggle="tab" href="#products">New Products</a></li>
+                        <li><a data-bs-toggle="tab" href="#onsale">OnSale</a></li>
+                        <li><a data-bs-toggle="tab" href="#featureproducts">Feature Products</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="featureproducts">
+                        <div class="row product-slider">
+                            @foreach ($featuredProducts as $productItem)
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="single-product mb-30">
+                                    <div class="product-img">
+                                        @if ($productItem->productImages->count() > 0)
+                                            <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
+                                                <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}">
+                                            </a>
+                                        @endif
+                                        <span class="descount-sticker">-10%</span>
+                                        <span class="sticker">New</span>
+                                        <div class="product-action d-flex justify-content-between">
+                                            <a class="product-btn" href="#">Add to Cart</a>
+                                            <ul class="d-flex">
+                                                <li><a href="#quick-view-modal-container" data-bs-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-exchange"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3>
+                                            <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
+                                                {{ $productItem->name }}
+                                            </a>
+                                        </h3>
+                                        <div class="ratting">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <h4 class="price">
+                                            <span class="new">${{ $productItem->selling_price }}</span>
+                                            @if($productItem->original_price > $productItem->selling_price)
+                                                <span class="old">${{ $productItem->original_price }}</span>
+                                            @endif
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<!--Product section end-->
 
-<!-- Trending Products Section -->
-<div class="py-1">
+
+
+
+        <!--Call To Action section start-->
+        <div class="cta-section section bg-image pt-90 pt-lg-70 pt-md-60 pt-sm-50 pt-xs-40 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-40"
+    data-bg="{{ asset($sliders[0]->image ?? '') }}">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h4>Trending Products</h4>
-                <div class="underline mb-4"></div>
+            <div class="col-12">
+                <div class="cta-content">
+                    <h3>Get <span>10%</span> Discount</h3>
+                    <p><span>Subscribe to the TheFace mailing list to receive updates on new arrivals,</span>
+                        <span>special offers and other discount information.</span></p>
+                    <div class="cta-form">
+                        <form id="mc-form" class="mc-form">
+                            <input id="mc-email" type="email" autocomplete="off" placeholder="Your email address here">
+                            <button id="mc-submit" class="cta-btn">Subscribe</button>
+                        </form>
+                        <!-- mailchimp-alerts Start -->
+                        <div class="mailchimp-alerts text-centre">
+                            <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                            <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                            <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+</div>
+        <!--Call To Action section end-->
 
-            @if ($trendingProducts->isNotEmpty())
-                <div class="col-md-12">
-                    <div class="owl-carousel owl-theme four-carousel">
-                        @foreach ($trendingProducts as $productItem)
-                            <div class="item">
-                                <div class="product-card">
-                                    <div class="product-card-img">
-                                        <label class="stock bg-danger">New</label>
 
-                                        @if ($productItem->productImages->count() > 0)
-                                            <a href="{{ url('/collections/' . $productItem->category->slug . '/' . $productItem->slug) }}">
-                                                <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}">
+
+        <!--List Product section start-->
+        <div class="list-section section pt-95 pt-lg-75 pt-md-65 pt-sm-55 pt-xs-45 pb-30 pb-lg-10 pb-md-0 pb-sm-0 pb-xs-0">
+    <div class="container">
+        <!-- Add Product Tab Menu -->
+        <div class="row">
+            <div class="col-12">
+                <div class="product-tab-menu mb-40 mb-xs-20">
+                    <ul class="nav justify-content-center">
+                        <li><a class="active" data-bs-toggle="tab" href="#trending-tab">Trending Products</a></li>
+                        <li><a data-bs-toggle="tab" href="#new-arrivals-tab">New Arrivals</a></li>
+                        <li><a data-bs-toggle="tab" href="#featured-tab">Featured Products</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="tab-content">
+                    <!-- Trending Products Tab -->
+                    <div class="tab-pane fade show active" id="trending-tab">
+                        <div class="row">
+                            @foreach($trendingProducts->take(3) as $product)
+                            <div class="col-lg-4 col-md-6 col-sm-6 mb-40">
+                                <div class="single-list-product">
+                                    <div class="list-product-inner d-flex">
+                                        <div class="product-image">
+                                            @if($product->productImages->count() > 0)
+                                            <a href="{{ url('/collections/'.$product->category->slug.'/'.$product->slug) }}">
+                                                <img src="{{ asset($product->productImages[0]->image) }}" alt="{{ $product->name }}" style="width: 100px; height: 100px; object-fit: cover;">
                                             </a>
-                                        @endif
-                                    </div>
-                                    <div class="product-card-body">
-                                        <p class="product-brand">{{ $productItem->brand }}</p>
-                                        <h5 class="product-name">
-                                            <a href="{{ url('/collections/' . $productItem->category->slug . '/' . $productItem->slug) }}">
-                                                {{ $productItem->name }}
-                                            </a>
-                                        </h5>
-                                        <div>
-                                            <span class="selling-price">${{ $productItem->selling_price }}</span>
-                                            <span class="original-price">${{ $productItem->original_price }}</span>
+                                            @endif
                                         </div>
-                                        <div class="mt-2">
-                                            <a href="#" class="btn btn1">Add To Cart</a>
-                                            <a href="#" class="btn btn1"><i class="fa fa-heart"></i></a>
-                                            <a href="#" class="btn btn1">View</a>
+                                        <div class="product-content">
+                                            <h3><a href="{{ url('/collections/'.$product->category->slug.'/'.$product->slug) }}">{{ $product->name }}</a></h3>
+                                            <h4 class="price">
+                                                <span class="new">${{ $product->selling_price }}</span>
+                                                @if($product->original_price > $product->selling_price)
+                                                <span class="old">${{ $product->original_price }}</span>
+                                                @endif
+                                            </h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-            @else
-                <div class="col-md-12">
-                    <div class="p-2">
-                        <h4>No Trending Products Available</h4>
-                    </div>
-                </div>
-            @endif
-        </div>
-    </div>
-</div>
 
-<!-- Featured Products Section -->
-<div class="py-1 bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 d-flex justify-content-between">
-                <h4>Featured Products</h4>
-                <a href="{{ url('featured-products') }}" class="btn btn-warning">View More</a>
-            </div>
-            <div class="underline mb-4"></div>
-
-            @if ($featuredProducts->isNotEmpty())
-                <div class="col-md-12">
-                    <div class="owl-carousel owl-theme four-carousel">
-                        @foreach ($featuredProducts as $productItem)
-                            <div class="item">
-                                <div class="product-card">
-                                    <div class="product-card-img">
-                                        <label class="stock bg-danger">New</label>
-
-                                        @if ($productItem->productImages->count() > 0)
-                                            <a href="{{ url('/collections/' . $productItem->category->slug . '/' . $productItem->slug) }}">
-                                                <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}">
+                    <!-- New Arrivals Tab -->
+                    <div class="tab-pane fade" id="new-arrivals-tab">
+                        <div class="row">
+                            @foreach($newArrivalsProducts->take(3) as $product)
+                            <div class="col-lg-4 col-md-6 col-sm-6 mb-40">
+                                <div class="single-list-product">
+                                    <div class="list-product-inner d-flex">
+                                        <div class="product-image">
+                                            @if($product->productImages->count() > 0)
+                                            <a href="{{ url('/collections/'.$product->category->slug.'/'.$product->slug) }}">
+                                                <img src="{{ asset($product->productImages[0]->image) }}" alt="{{ $product->name }}" style="width: 100px; height: 100px; object-fit: cover;">
                                             </a>
-                                        @endif
-                                    </div>
-                                    <div class="product-card-body">
-                                        <p class="product-brand">{{ $productItem->brand }}</p>
-                                        <h5 class="product-name">
-                                            <a href="{{ url('/collections/' . $productItem->category->slug . '/' . $productItem->slug) }}">
-                                                {{ $productItem->name }}
-                                            </a>
-                                        </h5>
-                                        <div>
-                                            <span class="selling-price">${{ $productItem->selling_price }}</span>
-                                            <span class="original-price">${{ $productItem->original_price }}</span>
+                                            @endif
                                         </div>
-                                        <div class="mt-2">
-                                            <a href="#" class="btn btn1">Add To Cart</a>
-                                            <a href="#" class="btn btn1"><i class="fa fa-heart"></i></a>
-                                            <a href="#" class="btn btn1">View</a>
+                                        <div class="product-content">
+                                            <h3><a href="{{ url('/collections/'.$product->category->slug.'/'.$product->slug) }}">{{ $product->name }}</a></h3>
+                                            <h4 class="price">
+                                                <span class="new">${{ $product->selling_price }}</span>
+                                                @if($product->original_price > $product->selling_price)
+                                                <span class="old">${{ $product->original_price }}</span>
+                                                @endif
+                                            </h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-            @else
-                <div class="col-md-12">
-                    <div class="p-2">
-                        <h4>No Featured Products Available</h4>
-                    </div>
-                </div>
-            @endif
-        </div>
-    </div>
-</div>
 
-<!-- New Arrivals Section -->
-<div class="py-1">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 d-flex justify-content-between">
-                <h4>New Arrivals</h4>
-                <a href="{{ url('new-arrivals') }}" class="btn btn-warning">View More</a>
-            </div>
-            <div class="underline mb-4"></div>
-
-            @if ($newArrivalsProducts->isNotEmpty())
-                <div class="col-md-12">
-                    <div class="owl-carousel owl-theme four-carousel">
-                        @foreach ($newArrivalsProducts as $productItem)
-                            <div class="item">
-                                <div class="product-card">
-                                    <div class="product-card-img">
-                                        <label class="stock bg-danger">New</label>
-
-                                        @if ($productItem->productImages->count() > 0)
-                                            <a href="{{ url('/collections/' . $productItem->category->slug . '/' . $productItem->slug) }}">
-                                                <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}">
+                    <!-- Featured Products Tab -->
+                    <div class="tab-pane fade" id="featured-tab">
+                        <div class="row">
+                            @foreach($featuredProducts->take(3) as $product)
+                            <div class="col-lg-4 col-md-6 col-sm-6 mb-40">
+                                <div class="single-list-product">
+                                    <div class="list-product-inner d-flex">
+                                        <div class="product-image">
+                                            @if($product->productImages->count() > 0)
+                                            <a href="{{ url('/collections/'.$product->category->slug.'/'.$product->slug) }}">
+                                                <img src="{{ asset($product->productImages[0]->image) }}" alt="{{ $product->name }}" style="width: 100px; height: 100px; object-fit: cover;">
                                             </a>
-                                        @endif
-                                    </div>
-                                    <div class="product-card-body">
-                                        <p class="product-brand">{{ $productItem->brand }}</p>
-                                        <h5 class="product-name">
-                                            <a href="{{ url('/collections/' . $productItem->category->slug . '/' . $productItem->slug) }}">
-                                                {{ $productItem->name }}
-                                            </a>
-                                        </h5>
-                                        <div>
-                                            <span class="selling-price">${{ $productItem->selling_price }}</span>
-                                            <span class="original-price">${{ $productItem->original_price }}</span>
+                                            @endif
                                         </div>
-                                        <div class="mt-2">
-                                            <a href="#" class="btn btn1">Add To Cart</a>
-                                            <a href="#" class="btn btn1"><i class="fa fa-heart"></i></a>
-                                            <a href="#" class="btn btn1">View</a>
+                                        <div class="product-content">
+                                            <h3><a href="{{ url('/collections/'.$product->category->slug.'/'.$product->slug) }}">{{ $product->name }}</a></h3>
+                                            <h4 class="price">
+                                                <span class="new">${{ $product->selling_price }}</span>
+                                                @if($product->original_price > $product->selling_price)
+                                                <span class="old">${{ $product->original_price }}</span>
+                                                @endif
+                                            </h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
-            @else
-                <div class="col-md-12">
-                    <div class="p-2">
-                        <h4>No New Arrivals Available</h4>
-                    </div>
-                </div>
-            @endif
+            </div>
         </div>
     </div>
 </div>
+<!--List Product section end-->
+
 
 @endsection
 
@@ -239,17 +391,7 @@
     z-index: 2;
 }
 
-/* Add overlay */
-.hero-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.3);
-    z-index: 1;
-}
+/* Removed the overlay filter */
 
     .hero-section {
         margin-bottom: 30px;
@@ -285,13 +427,14 @@
     }
     .hero-content-2 .btn-slider {
         display: inline-block;
-        padding: 15px 30px;
-        background: #fff;
-        color: #222;
-        text-transform: uppercase;
-        font-weight: 700;
-        border-radius: 50px;
-        transition: all 0.3s;
+    font-size: 20px;
+    line-height: 1;
+    text-decoration: underline;
+    /* display: block; */
+    color: #cea679 !important;
+    font-weight: 600;
+    width: fit-content;
+
     }
     .hero-content-2 .btn-slider:hover {
         background: #222;
@@ -303,15 +446,15 @@
     .color-2 {
         color: #fff;
     }
+
+    /* Remove the before pseudo-element that was adding the dark overlay */
     .hero-item::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.2);
-        z-index: 1;
+        display: none;
+    }
+
+    /* Remove the after pseudo-element that was adding the dark overlay */
+    .hero-item::after {
+        display: none;
     }
 
     /* Hover effects for buttons */
@@ -330,6 +473,205 @@
         display: flex;
         justify-content: space-between;
     }
+
+    /* Custom Navigation Styling */
+    .slick-prev, .slick-next {
+        background: rgba(255, 255, 255, 0.7);
+        width: auto;
+        height: auto;
+        padding: 10px 20px;
+        border-radius: 5px;
+        z-index: 10;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .slick-prev {
+        left: 20px;
+    }
+
+    .slick-next {
+        right: 20px;
+    }
+
+    .slick-prev:hover, .slick-next:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .slick-prev:before {
+        content: 'Prev';
+        color: #000;
+        font-family: Arial, sans-serif;
+    }
+
+    .slick-next:before {
+        content: 'Next';
+        color: #000;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Add these new styles */
+    .product-slider .slick-track {
+        display: flex;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .product-slider .slick-slide {
+        /* margin: 0 15px; */
+        height: auto;
+    }
+
+    .product-slider {
+        margin: 0 -15px;
+    }
+
+    .single-product {
+        margin-bottom: 30px;
+        height: 100%;
+    }
+
+    /* Add these new styles for consistent card sizes */
+    .single-product {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .product-img {
+        position: relative;
+        width: 100%;
+        padding-top: 100%; /* Create a square aspect ratio */
+        overflow: hidden;
+    }
+
+    .product-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This will ensure images cover the area without distortion */
+    }
+
+    .product-content {
+        /* padding: 4px; */
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-content h3 {
+        /* margin-bottom: 4px; */
+        font-size: 16px;
+        line-height: 1;
+        height: 22px; /* Set fixed height for title - allows for 2 lines */
+        overflow: hidden;
+    }
+
+    .product-content .ratting {
+        /* margin-bottom: 4px; */
+    }
+
+    .product-content .price {
+        margin-top: auto; /* Push price to bottom */
+    }
+
+    /* Ensure slider items maintain consistent width */
+    .product-slider .slick-slide > div {
+        height: 100%;
+    }
+
+    .product-slider .col-lg-3 {
+        height: 100%;
+    }
+
+    /* Add these new styles for list products */
+    .list-product-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .single-list-product {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+    }
+
+    .single-list-product:last-child {
+        border-bottom: none;
+    }
+
+    .list-product-inner {
+        gap: 15px;
+    }
+
+    .list-product-inner .product-image {
+        flex: 0 0 100px;
+    }
+
+    .list-product-inner .product-content {
+        flex: 1;
+        padding: 10px 0;
+    }
+
+    .list-product-inner .product-content h3 {
+        margin: 0 0 10px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .list-product-inner .price {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .list-product-inner .price .old {
+        margin-left: 5px;
+        text-decoration: line-through;
+        color: #999;
+    }
+
+    /* Add these styles for the product tab menu */
+    .product-tab-menu .nav {
+        border-bottom: 1px solid #eee;
+        margin-bottom: 30px;
+    }
+
+    .product-tab-menu .nav li {
+        margin: 0 15px;
+    }
+
+    .product-tab-menu .nav li a {
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+        padding: 0 0 10px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .product-tab-menu .nav li a:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 0;
+        height: 2px;
+        background: #cea679;
+        transition: all 0.3s ease;
+    }
+
+    .product-tab-menu .nav li a.active,
+    .product-tab-menu .nav li a:hover {
+        color: #cea679;
+    }
+
+    .product-tab-menu .nav li a.active:after,
+    .product-tab-menu .nav li a:hover:after {
+        width: 100%;
+    }
 </style>
 @endsection
 
@@ -345,16 +687,57 @@ $(document).ready(function(){
         autoplay: true,
         autoplaySpeed: 5000,
         speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        prevArrow: '<button class="slick-prev"><i class="fa fa-angle-left"></i></button>',
-        nextArrow: '<button class="slick-next"><i class="fa fa-angle-right"></i></button>',
+        // Removed fade: true
+        // Removed cssEase: 'linear'
+        prevArrow: '<button type="button" class="slick-prev">Prev</button>',
+        nextArrow: '<button type="button" class="slick-next">Next</button>',
         responsive: [
             {
                 breakpoint: 768,
                 settings: {
                     arrows: false,
-                },
+                }
+            }
+        ]
+    });
+
+    $('.product-slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 500,
+        prevArrow: '<button type="button" class="slick-prev">Prev</button>',
+        nextArrow: '<button type="button" class="slick-next">Next</button>',
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false
+                }
             }
         ]
     });

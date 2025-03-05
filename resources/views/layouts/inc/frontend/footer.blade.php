@@ -1,79 +1,106 @@
-<footer class="footer-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <h4 class="footer-heading">{{$appSetting->website_name ?? 'Website Name'}}</h4>
-                <div class="footer-underline"></div>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                </p>
-            </div>
-            <div class="col-md-3">
-                <h4 class="footer-heading">Quick Links</h4>
-                <div class="footer-underline"></div>
-                <div class="mb-2"><a href="{{url('/')}}" class="text-white">Home</a></div>
-                <div class="mb-2"><a href="{{url('/about')}}" class="text-white">About Us</a></div>
-                <div class="mb-2"><a href="{{url('/contact')}}" class="text-white">Contact Us</a></div>
-                <div class="mb-2"><a href="{{url('/blogs')}}" class="text-white">Blogs</a></div>
-                <div class="mb-2"><a href="{{url('/sitemap')}}" class="text-white">Sitemaps</a></div>
-            </div>
-            <div class="col-md-3">
-                <h4 class="footer-heading">Shop Now</h4>
-                <div class="footer-underline"></div>
-                <div class="mb-2"><a href="{{url('/collections')}}" class="text-white">Collections</a></div>
-                <div class="mb-2"><a href="{{url('/trending')}}" class="text-white">Trending Products</a></div>
-                <div class="mb-2"><a href="{{url('/new-arrivals')}}" class="text-white">New Arrivals</a></div>
-                <div class="mb-2"><a href="{{url('/featured')}}" class="text-white">Featured Products</a></div>
-                <div class="mb-2"><a href="{{url('/cart')}}" class="text-white">Cart</a></div>
-            </div>
-            <div class="col-md-3">
-                <h4 class="footer-heading">Reach Us</h4>
-                <div class="footer-underline"></div>
-                <div class="mb-2">
-                    <p>
-                        <i class="fa fa-map-marker"></i>
-                        {{$appSetting->address ?? 'Address not available'}}
-                    </p>
-                </div>
-                <div class="mb-2">
-                    <a href="tel:{{$appSetting->phone1 ?? '#'}}" class="text-white">
-                        <i class="fa fa-phone"></i> {{$appSetting->phone1 ?? 'Phone number'}}
-                    </a>
-                </div>
-                <div class="mb-2">
-                    <a href="mailto:{{$appSetting->email1 ?? '#'}}" class="text-white">
-                        <i class="fa fa-envelope"></i> {{$appSetting->email1 ?? 'Email address'}}
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<!--Footer section start-->
+<footer class="footer-section section bg-dark">
 
-<div class="copyright-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <p> &copy; {{ date('Y') }} - {{$appSetting->website_name ?? 'Website Name'}}. All rights reserved.</p>
+    <!--Footer Top start-->
+    <div class="footer-top section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-45 pb-lg-25 pb-md-15 pb-sm-5 pb-xs-0">
+        <div class="container">
+            <div class="row row-25">
+
+                <!--Footer Widget start-->
+                <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                    <h4 class="title"><span class="text">About {{$appSetting->website_name ?? 'Website Name'}}</span></h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat</p>
+                    <div class="footer-social">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="linkedin"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="pinterest"><i class="fa fa-pinterest-p"></i></a>
+                        <a href="#" class="pinterest"><i class="fa fa-vimeo"></i></a>
+                    </div>
+                </div>
+                <!--Footer Widget end-->
+
+
+                <!--Footer Widget start-->
+                <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                    <h4 class="title"><span class="text">Information</span></h4>
+                    <ul class="ft-menu">
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                        <li><a href="#">Mobile</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                        <li><a href="#">Unsubscribe Notification</a></li>
+                    </ul>
+                </div>
+                <!--Footer Widget end-->
+
+
+                <!--Footer Widget start-->
+                <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                    <h4 class="title"><span class="text">Our Offers</span></h4>
+                    <ul class="ft-menu">
+                        <li><a href="#">New products</a></li>
+                        <li><a href="#">Top sellers</a></li>
+                        <li><a href="#">Specials</a></li>
+                        <li><a href="#">Manufacturers</a></li>
+                        <li><a href="#">Suppliers</a></li>
+                        <li><a href="#">Specials</a></li>
+                        <li><a href="#">Service</a></li>
+                    </ul>
+                </div>
+                <!--Footer Widget end-->
+
+                <!--Footer Widget start-->
+                <div class="footer-widget col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
+                    <h4 class="title"><span class="text">Contact us</span></h4>
+                    <ul class="address">
+
+                        <li><i class="fa fa-home"></i><span> {{$appSetting->address ?? 'Address not available'}}</span>
+                        </li>
+                        <li><i class="fa fa-phone"></i><span> <a href="tel:{{$appSetting->phone1 ?? '#'}}"></a></span></li>
+
+                        {{-- <a href="mailto:{{$appSetting->email1 ?? '#'}}" class="text-white">
+                            <i class="fa fa-envelope"></i> {{$appSetting->email1 ?? 'Email address'}}
+                        </a> --}}
+
+                        <li><i class="fa fa-envelope-o"></i><span><a href="mailto:{{$appSetting->email1 ?? '#'}}"></a></span></li>
+                    </ul>
+                    <div class="payment-box mt-15 mb-15">
+                        <a href="#"><img src="images/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <!--Footer Widget end-->
             </div>
-            <div class="col-md-4">
-                <div class="social-media">
-                    Get Connected:
-                    @if ($appSetting->facebook)
-                        <a href="{{$appSetting->facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
-                    @endif
-                    @if ($appSetting->twitter)
-                        <a href="{{$appSetting->twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
-                    @endif
-                    @if ($appSetting->instagram)
-                        <a href="{{$appSetting->instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
-                    @endif
-                    @if ($appSetting->youtube)
-                        <a href="{{$appSetting->youtube}}" target="_blank"><i class="fa fa-youtube"></i></a>
-                    @endif
+        </div>
+    </div>
+    <!--Footer Top end-->
+
+    <!--Footer bottom start-->
+    <div class="footer-bottom section">
+        <div class="container ft-border pt-40 pb-40 pt-xs-20 pb-xs-20">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6 col-md-6 col-sm-8">
+                    <div class="copyright text-start">
+                        <p>Copyright �2022 <a href="#">Theface</a>. All rights reserved.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-4">
+                    <div class="footer-logo text-end">
+                        <a href="index.html"><img src="images/logofoo.png" alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <!--Footer bottom end-->
+
+</footer>
+<!--Footer section end-->
+
+
+
+
+
